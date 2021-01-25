@@ -13,8 +13,8 @@
 ## Supported tags and respective `Dockerfile` links
 
 - [`latest`, `tumbleweed`](https://github.com/hybridadmin/docker-ansible-opensuse/tree/main/tumbleweed/Dockerfile)
-- [`15.2`](https://github.com/hybridadmin/docker-ansible-opensuse/tree/main/leap/15.2/Dockerfile)
-- [`15.1`](https://github.com/hybridadmin/docker-ansible-opensuse/tree/main/leap/15.1/Dockerfile)
+- [`15.2`](https://github.com/hybridadmin/docker-ansible-opensuse/tree/main/leap-15.2/Dockerfile)
+- [`15.1`](https://github.com/hybridadmin/docker-ansible-opensuse/tree/main/leap-15.1/Dockerfile)
 
 ## How to Build the image
 
