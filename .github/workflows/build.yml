@@ -62,7 +62,7 @@ jobs:
             --detach \
             --privileged \
             -v /sys/fs/cgroup:/sys/fs/cgroup:ro \
-            hybridadmin/ansible-${{ matrix.distribution.image }}:${{ matrix.distribution.version }} > "${container_id}"
+            hybridadmin/ansible-${{ matrix.distribution.image }}:${{ matrix.distribution.tags }} > "${container_id}"
           inspec exec tests/inspec --chef-license accept-silent -t docker://$(cat ${container_id})
 
       - name: Build/Push Docker to DockerHub
