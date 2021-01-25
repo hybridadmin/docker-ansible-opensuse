@@ -15,14 +15,17 @@ jobs:
       matrix:
         distribution:
           - image: opensuse
-            version: "leap-15.1"
+            folder: "leap-15.1"
+            version: "15.1"
             platform: "linux/amd64"
             tags: "15.1"
           - image: opensuse
-            version: "leap-15.2"
+            folder: "leap-15.2"
+            version: "15.2"
             platform: "linux/amd64"
             tags: "15.2"
           - image: opensuse
+            folder: "tumbleweed"
             version: "tumbleweed"
             platform: "linux/amd64"
             tags: "tumbleweed,latest"
@@ -51,7 +54,7 @@ jobs:
           docker build \
             --no-cache \
             --rm \
-            --file=${{ matrix.distribution.version }}/Dockerfile \
+            --file=${{ matrix.distribution.folder }}/Dockerfile \
             $(for i in $(echo ${{ matrix.distribution.tags }} | sed "s/,/ /g"); do echo "--tag hybridadmin/ansible-${{ matrix.distribution.image }}:$i "; done) \
             .
 
@@ -62,7 +65,7 @@ jobs:
             --detach \
             --privileged \
             -v /sys/fs/cgroup:/sys/fs/cgroup:ro \
-            hybridadmin/ansible-${{ matrix.distribution.image }}:${{ matrix.distribution.tags }} > "${container_id}"
+            hybridadmin/ansible-${{ matrix.distribution.image }}:${{ matrix.distribution.version }} > "${container_id}"
           inspec exec tests/inspec --chef-license accept-silent -t docker://$(cat ${container_id})
 
       - name: Build/Push Docker to DockerHub
@@ -70,7 +73,7 @@ jobs:
           docker buildx build \
             --push \
             --platform ${{ matrix.distribution.platform }} \
-            --file=${{ matrix.distribution.version }}/Dockerfile \
+            --file=${{ matrix.distribution.folder }}/Dockerfile \
             $(for i in $(echo ${{ matrix.distribution.tags }} | sed "s/,/ /g"); do echo "--tag hybridadmin/ansible-${{ matrix.distribution.image }}:$i "; done) \
             ${{ matrix.distribution.version }}
 
