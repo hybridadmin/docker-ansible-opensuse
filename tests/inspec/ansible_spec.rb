@@ -1,0 +1,1 @@
+<html><body>You are being <a href="https://raw.githubusercontent.com/diodonfrost/docker-ansible/master/tests/inspec/ansible_spec.rb">redirected</a>.</body></html>
