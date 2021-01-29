@@ -1,5 +1,5 @@
 # openSUSE Docker Images with ansible and systemd
-![Build](https://github.com/hybridadmin/docker-ansible-opensuse/workflows/Build/badge.svg?branch=main)
+![Build](https://github.com/hybridadmin/docker-ansible-opensuse/workflows/Build/badge.svg?branch=main) ![Docker Pulls](https://img.shields.io/docker/pulls/hybridadmin/ansible-opensuse)
 
 > openSUSE Docker images to be used for testing ansible playbooks and roles.
 
