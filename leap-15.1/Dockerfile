@@ -20,7 +20,12 @@ RUN zypper -n install git ansible sudo python2-pip python3-pip openssh curl tar 
 RUN python3 -m pip install --upgrade pip
 
 # Install Ansible pip package
-RUN python3 -m pip install ansible
+RUN python3 -m pip install ansible pymysql
+
+# Install Ansible inventory file.
+RUN mkdir -p /etc/ansible
+ADD https://raw.githubusercontent.com/hybridadmin/misc-scripts/master/linux/ansible/hosts /etc/ansible/hosts
+ADD https://raw.githubusercontent.com/hybridadmin/misc-scripts/master/linux/ansible/ansible.cfg etc/ansible/ansible.cfg
 
 VOLUME [ "/sys/fs/cgroup" ]
 

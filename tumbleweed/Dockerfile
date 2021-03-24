@@ -17,7 +17,12 @@ rm -f /usr/lib/systemd/system/anaconda.target.wants/*;
 RUN zypper -n install git sudo python3-pip openssh curl tar unzip busybox-gzip rsync; zypper clean
 
 RUN python3 -m pip install --upgrade pip && \
-    python3 -m pip install ansible
+    python3 -m pip install ansible pymysql
+
+# Install Ansible inventory file.
+RUN mkdir -p /etc/ansible
+ADD https://raw.githubusercontent.com/hybridadmin/misc-scripts/master/linux/ansible/hosts /etc/ansible/hosts
+ADD https://raw.githubusercontent.com/hybridadmin/misc-scripts/master/linux/ansible/ansible.cfg etc/ansible/ansible.cfg
 
 VOLUME [ "/sys/fs/cgroup" ]
 
