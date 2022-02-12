@@ -20,7 +20,7 @@ RUN zypper -n install git ansible sudo python2-pip python3-pip openssh curl tar 
 RUN python3 -m pip install --upgrade pip
 
 # Install Ansible pip package
-RUN python3 -m pip install ansible pymysql
+RUN python3 -m pip install ansible pymysql yamllint ansible-lint
 
 # Install Ansible inventory file.
 RUN mkdir -p /etc/ansible
