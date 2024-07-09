@@ -9,13 +9,12 @@
 - Maintained by: [hybridadmin](https://github.com/hybridadmin)
 - Where to get help: [The Docker Community Forums](https://forums.docker.com/), [Docker Community on Slack](https://dockr.ly/slack) or [Stack Overflow](https://stackoverflow.com/search?tab=newest&q=docker)
 - Where to file issues: [(issue tracker)](https://github.com/hybridadmin/docker-ansible-opensuse/issues) include the `docker` tag
-- Supported architectures: [(more info)](https://github.com/docker-library/official-images#architectures-other-than-amd64) `amd64`
+- Supported Arch(s): [(more info)](https://github.com/docker-library/official-images#architectures-other-than-amd64) `amd64`
 
 ## Supported tags and respective `Dockerfile` links
 
-- [`latest`, `tumbleweed`](https://github.com/hybridadmin/docker-ansible-opensuse/tree/main/tumbleweed/Dockerfile)
-- [`15.2`](https://github.com/hybridadmin/docker-ansible-opensuse/tree/main/leap-15.2/Dockerfile)
-- [`15.1`](https://github.com/hybridadmin/docker-ansible-opensuse/tree/main/leap-15.1/Dockerfile)
+- [`15.6`,`latest`](https://github.com/hybridadmin/docker-ansible-opensuse/tree/main/leap-15.6/Dockerfile)
+- [`15.5`](https://github.com/hybridadmin/docker-ansible-opensuse/tree/main/leap-15.5/Dockerfile)
 
 ## How to Build the image
 
