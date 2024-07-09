@@ -14,13 +14,13 @@ rm -f /usr/lib/systemd/system/basic.target.wants/*;\
 rm -f /usr/lib/systemd/system/anaconda.target.wants/*;
 
 # Install ansible
-RUN zypper -n install git ansible sudo python3 python2-pip python3-pip openssh curl tar unzip gzip rsync; zypper clean
+RUN zypper -n install git ansible sudo python2-pip python3-pip openssh curl tar unzip gzip rsync; zypper clean
 
 # Upgrade pip
-RUN python3 -m pip install --upgrade pip
+#RUN python3 -m pip install --upgrade pip
 
 # Install Ansible pip package
-RUN python3 -m pip install ansible pymysql yamllint ansible-lint
+RUN pip3 install ansible pymysql yamllint ansible-lint
 
 # Install Ansible inventory file.
 RUN mkdir -p /etc/ansible
