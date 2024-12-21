@@ -1,6 +1,6 @@
 # openSUSE Docker Images with ansible and systemd
 
-![Build](https://github.com/hybridadmin/docker-ansible-opensuse/workflows/Build/badge.svg?branch=main) ![Docker Pulls](https://img.shields.io/docker/pulls/hybridadmin/ansible-opensuse)
+![Build](https://img.shields.io/github/actions/workflow/status/hybridadmin/docker-ansible-opensuse/build.yml) ![Docker Pulls](https://img.shields.io/docker/pulls/hybridadmin/ansible-opensuse)
 
 > openSUSE Docker images to be used for testing ansible playbooks and roles.
 
@@ -36,7 +36,7 @@ docker pull hybridadmin/ansible-opensuse:latest
 Run a container using the image with the following command:
 
 ```console
-docker run -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro hybridadmin/ansible-opensuse:latest
+docker run -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:rw --cgroupns=host hybridadmin/ansible-opensuse:latest
 ```
 
 Use ansible inside the container:
