@@ -1,7 +1,7 @@
 FROM opensuse/leap:15.2
 LABEL maintainer="Tinashe Chikomo <tinashe@chikomo.net>"
 
-ENV container docker
+ENV container=docker
 
 RUN zypper -n install systemd; zypper clean ; \
 (cd /usr/lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == systemd-tmpfiles-setup.service ] || rm -f $i; done); \

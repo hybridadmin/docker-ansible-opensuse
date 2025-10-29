@@ -1,7 +1,7 @@
 FROM opensuse/leap:15.5
 LABEL maintainer="Tinashe Chikomo <tinashe@chikomo.net>"
 
-ENV container docker
+ENV container=docker
 
 RUN zypper -n install systemd; zypper clean ; \
 (cd /usr/lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == systemd-tmpfiles-setup.service ] || rm -f $i; done); \
@@ -14,7 +14,7 @@ rm -f /usr/lib/systemd/system/basic.target.wants/*;\
 rm -f /usr/lib/systemd/system/anaconda.target.wants/*;
 
 # Install ansible
-RUN zypper -n install git ansible sudo python3-pip openssh curl tar unzip gzip rsync; zypper clean
+RUN zypper -n install git ansible sudo gcc python3-devel python3-pip openssh curl tar unzip gzip rsync; zypper clean
 
 # Upgrade pip
 #RUN python3 -m pip install --upgrade pip

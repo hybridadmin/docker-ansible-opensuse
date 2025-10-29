@@ -1,4 +1,4 @@
-FROM opensuse/leap:15.6
+FROM opensuse/leap:15.3
 LABEL maintainer="Tinashe Chikomo <tinashe@chikomo.net>"
 
 ENV container=docker
@@ -17,7 +17,7 @@ rm -f /usr/lib/systemd/system/anaconda.target.wants/*;
 RUN zypper -n install git ansible sudo gcc python3-devel python3-pip openssh curl tar unzip gzip rsync; zypper clean
 
 # Upgrade pip
-#RUN python3 -m pip install --upgrade pip setuptools wheel
+#RUN python3 -m pip install --upgrade pip
 
 # Install Ansible pip package
 RUN pip3 install ansible pymysql yamllint ansible-lint
