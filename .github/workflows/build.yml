@@ -10,19 +10,19 @@ jobs:
       matrix:
         distro:
           - image: opensuse
-            folder: "leap-15.3"
+            folder: "15.3"
             version: "15.3"
             tags: "15.3"
           - image: opensuse
-            folder: "leap-15.4"
+            folder: "15.4"
             version: "15.4"
             tags: "15.4"
           - image: opensuse
-            folder: "leap-15.5"
+            folder: "15.5"
             version: "15.5"
             tags: "15.5"
           - image: opensuse
-            folder: "leap-15.6"
+            folder: "15.6"
             version: "15.6"
             tags: "15.6,latest"
     uses: hybridadmin/reuse-workflows/.github/workflows/build_push.yml@main
@@ -30,7 +30,7 @@ jobs:
     with:
       distro_image: '${{ matrix.distro.image }}'
       distro_tags: '${{ matrix.distro.tags }}'
-      distro_platform: '"linux/amd64","linux/arm64"' #'${{ matrix.distro.platform }}'
+      distro_platform: 'linux/amd64,linux/arm64' #'${{ matrix.distro.platform }}'
       distro_version: '${{ matrix.distro.version }}'
 
   run_update_readme:

@@ -13,8 +13,10 @@
 
 ## Supported tags and respective `Dockerfile` links
 
-- [`15.6`,`latest`](https://github.com/hybridadmin/docker-ansible-opensuse/tree/main/leap-15.6/Dockerfile)
-- [`15.5`](https://github.com/hybridadmin/docker-ansible-opensuse/tree/main/leap-15.5/Dockerfile)
+- [`15.6`,`latest`](https://github.com/hybridadmin/docker-ansible-opensuse/tree/main/15.6/Dockerfile)
+- [`15.5`](https://github.com/hybridadmin/docker-ansible-opensuse/tree/main/15.5/Dockerfile)
+- [`15.4`](https://github.com/hybridadmin/docker-ansible-opensuse/tree/main/15.4/Dockerfile)
+- [`15.3`](https://github.com/hybridadmin/docker-ansible-opensuse/tree/main/15.3/Dockerfile)
 
 ## How to Build the image
 
